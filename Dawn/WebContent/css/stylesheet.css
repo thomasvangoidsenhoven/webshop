@@ -1,0 +1,172 @@
+
+body, html{
+    height: 100%;
+ 	background-repeat: no-repeat;
+ 	background-color: #d3d3d3;
+ 	font-family: 'Oxygen', sans-serif;
+}
+
+.start
+{
+    padding-top:65px;
+    
+}
+
+.form-main{
+ 	margin-top: 5%;
+}
+
+h1.title { 
+	font-size: 50px;
+	font-family: 'Passion One', cursive; 
+	font-weight: 400; 
+}
+
+hr{
+	width: 10%;
+	color: #fff;
+}
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.form-login{
+ 	background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.form-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px;
+
+}
+
+.form-button{
+	margin-top: 5px;
+}
+
+.form-aftertext{
+	font-size: 11px;
+	text-align: center;
+}
+
+/*
+    nav
+*/
+.navbar-inverse
+{
+    background-color: #002140;
+    border-bottom: #337ab7;
+    color: fff;
+}
+
+.navbar-inverse .navbar-brand
+{
+    color:white;
+}
+
+.navbar-inverse .navbar-nav>li>a
+{
+    color:white;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover
+{
+    background-color: #001123;
+}
+
+.actionbutton 
+{
+    transition: 1s;
+    padding: 15px 15px;
+    background-color: #002140;
+    border:1px solid #337ab7;
+    margin-top: 10px;
+    display: inline-block;
+    color: aliceblue;
+    border-radius: 10px;
+}
+
+.actionbutton:hover
+{
+    transition: 1s;
+    background-color: black;
+    color:aliceblue;
+    text-decoration: none;
+    border-radius: 0;
+}
+
+table
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,th,td
+{
+    border: 1px black solid;
+    font-weight: bolder;
+}
+
+th
+{
+    text-align: center;
+}
+
+/* faq mark-up */
+
+.faqQuestion 
+{	
+    font-size: 18px;
+    border-radius: 10px 10px 0 0;
+    background-color:  #002140;
+    color: aliceblue;
+}
+
+.faqAnswer {
+    border-radius: 0 0 10px 10px;
+    background-color: aliceblue;
+    color: #002140;
+}
+
+.faq section
+{
+    margin-bottom: 50px;
+}
+
+.faqFirst
+{
+    margin-top:50px;
+}
+
+/* gemeenschappelijke elementen van faqAnswer en faqQuestion */
+.faq section p
+{
+    display: block;
+    margin-bottom: 0;
+    padding:15px;
+}
+
+/*Credits:
+* Register Page design Created by Filipe Pina
+*/
