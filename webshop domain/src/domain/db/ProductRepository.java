@@ -7,7 +7,7 @@ import domain.model.Product;
 
 public interface ProductRepository {
 
-	public Product get(String pruductId);
+	public Product get(String productId);
 
 	public List<Product> getAll();
 

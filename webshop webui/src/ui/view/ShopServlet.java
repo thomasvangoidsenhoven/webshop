@@ -62,12 +62,22 @@ public class ShopServlet extends HttpServlet {
 			{
 				destination = createProduct(request, response);
 			}
+			if(action.equals("showProducts"))
+			{
+				destination = showProducts(request, response);
+			}
 			
 		}
 		
 		RequestDispatcher view = request.getRequestDispatcher(destination);
 		view.forward(request,response);
 	}
+
+	private String showProducts(HttpServletRequest request, HttpServletResponse response) {
+		request.setAttribute("productlist", this.productRepository.getAll());
+		return "productOverview.jsp";
+	}
+
 
 	private String createProduct(HttpServletRequest request, HttpServletResponse response) {
 		String productid = request.getParameter("productid");
@@ -81,7 +91,7 @@ public class ShopServlet extends HttpServlet {
 		{
 			Product product = new Product(productid, description, price);
 			productRepository.add(product);
-			return "index.jsp";
+			return showProducts(request, response);
 		}
 		
 		
