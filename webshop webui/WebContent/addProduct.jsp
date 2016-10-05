@@ -27,18 +27,16 @@ Sign Up
 		</ul>
 	</div>
 
-    <form method="post" action="Controller?action=createPerson" novalidate="novalidate">
+    <form method="post" action="Controller?action=createProduct" novalidate="novalidate">
     	<!-- novalidate in order to be able to run tests correctly -->
-        <p><label for="userid">User id</label><input type="text" id="userid" name="userid"
-         required value="${userid}"> </p>
-        <p><label for="firstName">First Name</label><input type="text" id="firstName" name="firstName"
-         required value="${firstname}"> </p>
-        <p><label for="lastName">Last Name</label><input type="text" id="lastName" name="lastName"
-         required value="${lastname}"> </p>
-        <p><label for="email">Email</label><input type="email" id="email" name="email" required value="${email}"></p>
-        <p><label for="password">Password</label><input type="password" id="password"  name="password"
-         required> </p>
-        <p><input type="submit" id="signUp" value="Sign Up"></p>
+        <p><label for="productid">Product id</label><input type="text" id="productid" name="productid"
+         required value="${productid}"> </p>
+        <p><label for="description">Description</label><input type="text" id="description" name="description"
+         required value="${description}"> </p>
+        <p><label for="price">price</label><input type="number" id="price" name="price"
+         required value="${price}"> </p>
+  
+        <p><input type="submit" id="signUp" value="add product"></p>
         
     </form>
 </main>

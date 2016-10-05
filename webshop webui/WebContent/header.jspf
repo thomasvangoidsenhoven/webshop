@@ -1,0 +1,8 @@
+<nav>
+<ul>
+<li><a href="Controller">Home</a></li>
+<li id="actual"><a href="Controller?action=overview">Overview</a></li>
+<li><a href="Controller?action=signUp">Sign up</a></li>
+<li id="actual"><a href="Controller?action=addProduct">Product Toevoegen</a></li>
+</ul>
+</nav>

@@ -12,6 +12,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/spooky/Downloads/postgresql-9.4.1211.jar"/>
+	<classpathentry kind="lib" path="/home/spooked/Downloads/postgresql-9.4.1211.jar"/>
+	<classpathentry kind="lib" path="/home/spooked/Downloads/selenium-server-standalone-3.0.0-beta3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

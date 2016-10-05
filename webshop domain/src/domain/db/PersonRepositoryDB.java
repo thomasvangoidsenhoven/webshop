@@ -146,7 +146,20 @@ public class PersonRepositoryDB implements PersonRepository{
 
 	@Override
 	public void update(Person person) {
-		// TODO Auto-generated method stub
+		try {
+			Connection connection;
+			connection = DriverManager.getConnection(url, properties);
+			Statement statement ;
+			statement = connection.createStatement();
+			
+			statement.execute(	"UPDATE person"
+					+ 			"SET userid = " + "'" + person.getUserid() + "', "  + "firstname = " + "'" + person.getFirstName()+ "', " + "lastname = " + "'" + person.getLastName()+ "', "  + "email = " + "'" + person.getEmail()+ "', " + "password = " + "'" + person.getPassword()+ "', "  
+					+ 			"WHERE userid = " + person.getUserid());
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

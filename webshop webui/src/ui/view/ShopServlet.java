@@ -13,7 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import domain.db.PersonRepository;
 import domain.db.PersonRepositoryDB;
 import domain.db.PersonRepositoryInMemory;
+import domain.db.ProductRepository;
+import domain.db.ProductRepositoryDB;
 import domain.model.Person;
+import domain.model.Product;
 
 /**
  * Servlet implementation class ShopServlet
@@ -22,7 +25,7 @@ import domain.model.Person;
 public class ShopServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	PersonRepository personRepository = new PersonRepositoryDB();
-       
+    ProductRepository productRepository = new ProductRepositoryDB();
     public ShopServlet() {
         super();
     }
@@ -51,12 +54,48 @@ public class ShopServlet extends HttpServlet {
 			{
 				destination = createPerson(request,response);
 			}
+			if(action.equals("addProduct"))
+			{
+				destination = goToAddProduct(request, response);
+			}
+			if(action.equals("createProduct"))
+			{
+				destination = createProduct(request, response);
+			}
 			
 		}
 		
 		RequestDispatcher view = request.getRequestDispatcher(destination);
 		view.forward(request,response);
 	}
+
+	private String createProduct(HttpServletRequest request, HttpServletResponse response) {
+		String productid = request.getParameter("productid");
+		String description = request.getParameter("description");
+		double price = Double.parseDouble(request.getParameter("price"));
+		ArrayList<String> foutboodschappen = new ArrayList<>();
+		if(productid.isEmpty()) foutboodschappen.add("id is leeg");
+		if(description.isEmpty()) foutboodschappen.add("description is leeg");
+		if(request.getParameter("price").isEmpty()) foutboodschappen.add("prijs is leeg");
+		if(foutboodschappen.isEmpty())
+		{
+			Product product = new Product(productid, description, price);
+			productRepository.add(product);
+			return "index.jsp";
+		}
+		
+		
+		request.setAttribute("productid", productid);
+
+		request.setAttribute("foutboodschappen", foutboodschappen);
+		return this.goToAddProduct(request, response);
+	}
+
+
+	private String goToAddProduct(HttpServletRequest request, HttpServletResponse response) {
+		return "addProduct.jsp";
+	}
+
 
 	private String createPerson(HttpServletRequest request, HttpServletResponse response) {
 		String userID = request.getParameter("userid");
