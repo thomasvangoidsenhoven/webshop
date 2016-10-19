@@ -163,9 +163,22 @@ public class PersonRepositoryDB implements PersonRepository{
 
 	@Override
 	public void delete(String personId) {
-		// TODO Auto-generated method stub
+		try {
+			Connection connection;
+			connection = DriverManager.getConnection(url, properties);
+			Statement statement ;
+			statement = connection.createStatement();
+			
+			statement.execute("DELETE FROM table "
+							+ "where" + "'" + personId + "'" );
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
+
 
 }
